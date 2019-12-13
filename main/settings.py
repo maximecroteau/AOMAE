@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr-FR'
 
-LANGUAGE = [
+LANGUAGES = [
     ('fr', gettext_noop('French')),
 ]
 
