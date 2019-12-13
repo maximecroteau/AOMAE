@@ -1,1 +1,5 @@
-init git project
+- PROJECT 'AOMAE' FROM ISEFAC SCHOOL -
+- http://aomae.pythonanywhere.com/ -
+- Not real e-shop -
+- Templates from Colorib : https://colorlib.com/wp/template/shopmax/ -
+- Python / Django Project -
