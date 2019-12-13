@@ -22,3 +22,14 @@ def cart(request):
 
     return render(request, 'cart.html')
 
+
+def checkout(request):
+
+    return render(request, 'checkout.html')
+
+
+def thankyou(request):
+
+    return render(request, 'thankyou.html')
+
+
