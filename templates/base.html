@@ -29,9 +29,7 @@
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
-            <div class="site-logo">
-               <img src="{% static 'images/logo.png' %}" alt="Image" class="logo-main">
-            </div>
+                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Image" class="logo-main"></a>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
@@ -53,8 +51,7 @@
                   </ul>
                 </li>
 
-                <li><a href="{% url 'shop' %}">Boutique</a></li>
-                <li><a href="#">Catalogue</a></li>
+                <li><a href="{% url 'shop' %}">Catalogue</a></li>
                 <li><a href="#">Nouveautés</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
               </ul>
@@ -74,65 +71,39 @@
 
   {% block body %}
   {% endblock %}
-       <footer class="site-footer custom-border-top">
+     <footer class="site-footer custom-border-top">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-            <h3 class="footer-heading mb-4">Promo</h3>
-            <a href="#" class="block-6">
-              <img src="{% static 'images/about_1.jpg' %}" alt="Image placeholder" class="img-fluid rounded mb-4">
-              <h3 class="font-weight-light  mb-0">Finding Your Perfect Shirts This Summer</h3>
-              <p>Promo from  July 15 &mdash; 25, 2019</p>
-            </a>
-          </div>
-          <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
+          <div class="col-lg-5 ml-auto mb-0 mb-lg-0">
             <div class="row">
               <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Quick Links</h3>
+                <h3 class="footer-heading mb-4">Nos liens</h3>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Sell online</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Shopping cart</a></li>
-                  <li><a href="#">Store builder</a></li>
+                  <li><a href="http://facebook.com">Facebook</a></li>
+                  <li><a href="http://instagram.com">Instagram</a></li>
+                  <li><a href="http://twitter.com">Twitter</a></li>
+                  <li><a href="{% url 'shop' %}">Boutique</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
-                  <li><a href="#">Mobile commerce</a></li>
-                  <li><a href="#">Dropshipping</a></li>
-                  <li><a href="#">Website development</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">Point of sale</a></li>
-                  <li><a href="#">Hardware</a></li>
-                  <li><a href="#">Software</a></li>
+                  <li><a href="#">Point de vente</a></li>
+                  <li><a href="#">Notre concept</a></li>
                 </ul>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-5">
-              <h3 class="footer-heading mb-4">Contact Info</h3>
+            <div class="block-5 mb-2">
+              <h3 class="footer-heading mb-4">Nous contacter</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+                <li class="address">ISEFAC, 28 Rue Armand Brossard, 44000 Nantes</li>
+                <li class="phone"><a href="tel://23923929210">+33 (2) 40 33 30 83</a></li>
+                <li class="email">aomae@contact.fr</li>
               </ul>
-            </div>
-
-            <div class="block-7">
-              <form action="#" method="post">
-                <label for="email_subscribe" class="footer-heading">Subscribe</label>
-                <div class="form-group">
-                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
-                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
-                </div>
-              </form>
             </div>
           </div>
         </div>
