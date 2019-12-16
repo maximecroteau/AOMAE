@@ -5,9 +5,10 @@ from django.db import models
 
 class Products(models.Model):
     name = models.CharField(max_length=100)
+    old_price = models.IntegerField(blank=True, null=True, default=None)
     price = models.IntegerField()
-    picture = models.ImageField(blank=True)
-    stars = models.IntegerField(blank=True)
+    picture = models.ImageField(blank=True, upload_to="static/images/bdd/")
+    stars = models.IntegerField(blank=True, null=True, default=None)
 
     class Meta:
         verbose_name = "Produit"

@@ -4,8 +4,10 @@ from .models import Products
 
 
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'picture', 'stars')
-    list_filter = ('name', 'price', 'stars')
+    list_display = ('name', 'old_price', 'price', 'picture', 'stars')
+    list_filter = ('name', 'old_price', 'price', 'stars')
 
 
 admin.site.register(Products, ProductsAdmin)
+
+# python manage.py migrate --run-syncdb

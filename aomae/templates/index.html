@@ -1,242 +1,148 @@
 {% extends 'base.html' %}
-{%  load static %}
+{% load static %}
 
-  {% block body %}
+{% block body %}
     <div class="site-blocks-cover inner-page" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ml-auto order-md-2 align-self-start">
-            <div class="site-block-cover-content">
-            <h2 class="sub-title">#Nouvelle collection</h2>
-            <h1>LES NOUVEAUTÉS</h1>
-            <p><a href="{% url 'shop' %}" class="btn btn-black rounded-0">VOIR MAINTENANT</a></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">#Nouvelle collection</h2>
+                        <h1>LES NOUVEAUTÉS</h1>
+                        <p><a href="{% url 'shop' %}" class="btn btn-black rounded-0">VOIR MAINTENANT</a></p>
+                    </div>
+                </div>
+                {#          <div class="col-md-6 order-1 align-self-end">#}
+                {#            <img src="{% static '/model_4.png' %}" alt="Image" class="img-fluid">#}
+                {#          </div>#}
             </div>
-          </div>
-{#          <div class="col-md-6 order-1 align-self-end">#}
-{#            <img src="{% static '/model_4.png' %}" alt="Image" class="img-fluid">#}
-{#          </div>#}
         </div>
-      </div>
     </div>
 
 
     <div class="site-section">
-      <div class="container">
-        <div class="title-section mb-5">
-          <h2 class="text-uppercase"><span class="d-block">Découvrir</span> La collection</h2>
+        <div class="container">
+            <div class="title-section mb-5">
+                <h2 class="text-uppercase"><span class="d-block">Découvrir</span> La collection</h2>
+            </div>
+            <div class="row align-items-stretch">
+                <div class="col-lg-8">
+                    <div class="product-item sm-height full-height bg-gray">
+                        <a href="#" class="product-category">Femme <span>25 items</span></a>
+                        <img src="{% static 'images/model_4.png' %}" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-item sm-height bg-gray mb-4">
+                        <a href="#" class="product-category">Homme <span>25 items</span></a>
+                        <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
+                    </div>
+
+                    <div class="product-item sm-height bg-gray">
+                        <a href="#" class="product-category">Unisex <span>25 items</span></a>
+                        <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row align-items-stretch">
-          <div class="col-lg-8">
-            <div class="product-item sm-height full-height bg-gray">
-              <a href="#" class="product-category">Femme <span>25 items</span></a>
-              <img src="{% static 'images/model_4.png' %}" alt="Image" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray mb-4">
-              <a href="#" class="product-category">Homme <span>25 items</span></a>
-              <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-            </div>
-
-            <div class="product-item sm-height bg-gray">
-              <a href="#" class="product-category">Unisex <span>25 items</span></a>
-              <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="title-section mb-5 col-12">
-            <h2 class="text-uppercase">Produits populaires</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/prod_2.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Gray Shoe</a></h2>
-            <strong class="item-price">$20.00</strong>
-          </div>
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/prod_3.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-            </div>
-
-          </div>
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/prod_1.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-            <div class="star-rating">
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-              <span class="icon-star2 text-warning"></span>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/model_1.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
-            <strong class="item-price"><del>$46.00</del> $28.00</strong>
-          </div>
-          <div class="col-lg-4 col-md-6 item-entry mb-4">
-            <a href="#" class="product-item md-height bg-gray d-block">
-              <img src="{% static 'images/model_7.png' %}" alt="Image" class="img-fluid">
-            </a>
-            <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
-            <strong class="item-price">$58.00</strong>
-          </div>
-
-        </div>
-      </div>
     </div>
 
     <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="title-section text-center mb-5 col-12">
-            <h2 class="text-uppercase">Mieux notés</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 block-3">
-            <div class="nonloop-block-3 owl-carousel">
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="{% static 'images/model_1.png' %}" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
-                  <strong class="item-price"><del>$46.00</del> $28.00</strong>
-                  <div class="star-rating">
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                  </div>
+        <div class="container">
+            <div class="row">
+                <div class="title-section mb-5 col-12">
+                    <h2 class="text-uppercase">Produits populaires</h2>
                 </div>
-              </div>
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="{% static 'images/prod_3.png' %}" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-                  <strong class="item-price"><del>$46.00</del> $28.00</strong>
+            </div>
+            <div class="row">
+                {% for Prd in Prds %}
+                    <div class="col-lg-4 col-md-6 item-entry mb-4">
+                        <a href="#" class="product-item md-height bg-gray d-block">
+                            <img src="{{ Prd.picture.url }}" alt="Image" class="img-fluid">
+                        </a>
+                        <h2 class="item-title"><a href="#">{{ Prd.name }}</a></h2>
+                        <strong class="item-price">
+                            <del>{% if Prd.old_price %} {{ Prd.old_price }}€ {% endif %}</del>
+                            {{ Prd.price }}€</strong>
+                        {% if Prd.stars %}
+                            <div id="prd_{{ Prd.id }}" class="star-rating">
+                                <script>
+                                    for (let i = 0; i < {{ Prd.stars }}; i++) {
+                                        let spanElt = document.createElement("span");
+                                        spanElt.classList.add("icon-star2");
+                                        spanElt.classList.add("text-warning");
+                                        let divElt = document.getElementById("prd_" + {{ Prd.id }});
+                                        divElt.appendChild(spanElt)
+                                    }
+                                </script>
+                            </div>
+                        {% endif %}
 
-                  <div class="star-rating">
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-                  <strong class="item-price"><del>$46.00</del> $28.00</strong>
 
-                  <div class="star-rating">
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                  </div>
+                    </div>
+                {% endfor %}
 
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="{% static 'images/prod_1.png' %}" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-                  <strong class="item-price"><del>$46.00</del> $28.00</strong>
-                  <div class="star-rating">
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="{% static 'images/model_7.png' %}" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
-                  <strong class="item-price">$58.00</strong>
-                  <div class="star-rating">
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                    <span class="icon-star2 text-warning"></span>
-                  </div>
-                </div>
-              </div>
 
             </div>
-          </div>
         </div>
-      </div>
-    </div>
 
-
-    <div class="site-blocks-cover inner-page py-5" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ml-auto order-md-2 align-self-start">
-            <div class="site-block-cover-content">
-            <h2 class="sub-title">#Nouvelle Collection Hiver 2019</h2>
-            <h1>Les vestes</h1>
-            <p><a href="#" class="btn btn-black rounded-0">Voir maintenant</a></p>
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="title-section text-center mb-5 col-12">
+                        <h2 class="text-uppercase">Mieux notés</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 block-3">
+                        <div class="nonloop-block-3 owl-carousel">
+                            {% for BR in BestRates %}
+                                <div class="item">
+                                    <div class="item-entry">
+                                        <a href="#" class="product-item md-height bg-gray d-block">
+                                            <img src="{{ BR.picture.url }}" alt="Image" class="img-fluid">
+                                        </a>
+                                        <h2 class="item-title"><a href="#">{{ BR.name }}</a></h2>
+                                        <strong class="item-price">
+                                            {% if BR.old_price %}
+                                                <del>{{ BR.old_price }}€</del>
+                                            {% endif %}
+                                            {{ BR.price }}€</strong>
+                                        <div id="br_{{ BR.id }}" class="star-rating">
+                                            <script>
+                                                for (let i = 0; i < {{ BR.stars }}; i++) {
+                                                    let spanElt = document.createElement("span");
+                                                    spanElt.classList.add("icon-star2");
+                                                    spanElt.classList.add("text-warning");
+                                                    let divElt = document.getElementById("br_" + {{ BR.id }});
+                                                    divElt.appendChild(spanElt)
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6 order-1 align-self-end">
-            <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
-          </div>
         </div>
-      </div>
-    </div>
- {% endblock %}
+
+
+        <div class="site-blocks-cover inner-page py-5" data-aos="fade">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                        <div class="site-block-cover-content">
+                            <h2 class="sub-title">#Nouvelle Collection Hiver 2019</h2>
+                            <h1>Les vestes</h1>
+                            <p><a href="#" class="btn btn-black rounded-0">Voir maintenant</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 align-self-end">
+                        <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

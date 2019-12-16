@@ -1,11 +1,15 @@
 from django.shortcuts import render
-
+from .models import Products
 # Create your views here.
 
 
 def index(request):
-
-    return render(request, 'index.html')
+    Prds = Products.objects.all()
+    BestRates = Products.objects.filter(stars__gte=4)
+    return render(request, 'index.html', {
+        'Prds': Prds,
+        'BestRates': BestRates,
+    })
 
 
 def shop(request):

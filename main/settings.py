@@ -22,9 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'g47v&^5cfss@smg=df1*d*i6i)52$zy173qpn+!u5)+wzbp78)'
 
-def gettext_noop(s):
-    return s
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -112,10 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'fr-FR'
-
-LANGUAGES = [
-    ('fr', gettext_noop('French')),
-]
 
 TIME_ZONE = 'Europe/Paris'
 
