@@ -28,18 +28,18 @@
             <div class="row align-items-stretch">
                 <div class="col-lg-8">
                     <div class="product-item sm-height full-height bg-gray">
-                        <a href="#" class="product-category">Femme <span>25 items</span></a>
+                        <a href="{% url 'shop' filt="femme" %}" class="product-category">Femme <span>{{ nbFemme }} produits</span></a>
                         <img src="{% static 'images/model_4.png' %}" alt="Image" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="product-item sm-height bg-gray mb-4">
-                        <a href="#" class="product-category">Homme <span>25 items</span></a>
+                        <a href="{% url 'shop' filt="homme" %}" class="product-category">Homme <span>{{ nbHomme }} produits</span></a>
                         <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
                     </div>
 
                     <div class="product-item sm-height bg-gray">
-                        <a href="#" class="product-category">Unisex <span>25 items</span></a>
+                        <a href="{% url 'shop' filt="unisex" %}" class="product-category">Unisex <span>{{ nbUnisex }} produits</span></a>
                         <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
                     </div>
                 </div>
@@ -57,10 +57,10 @@
             <div class="row">
                 {% for Prd in Prds %}
                     <div class="col-lg-4 col-md-6 item-entry mb-4">
-                        <a href="#" class="product-item md-height bg-gray d-block">
+                        <a href="{% url 'product' pk=Prd.id %}" class="product-item md-height bg-gray d-block">
                             <img src="{{ Prd.picture.url }}" alt="Image" class="img-fluid">
                         </a>
-                        <h2 class="item-title"><a href="#">{{ Prd.name }}</a></h2>
+                        <h2 class="item-title"><a href="{% url 'product' pk=Prd.id %}">{{ Prd.name }}</a></h2>
                         <strong class="item-price">
                             <del>{% if Prd.old_price %} {{ Prd.old_price }}€ {% endif %}</del>
                             {{ Prd.price }}€</strong>
@@ -99,10 +99,10 @@
                             {% for BR in BestRates %}
                                 <div class="item">
                                     <div class="item-entry">
-                                        <a href="#" class="product-item md-height bg-gray d-block">
+                                        <a href="{% url 'product' pk=BR.id %}" class="product-item md-height bg-gray d-block">
                                             <img src="{{ BR.picture.url }}" alt="Image" class="img-fluid">
                                         </a>
-                                        <h2 class="item-title"><a href="#">{{ BR.name }}</a></h2>
+                                        <h2 class="item-title"><a href="{% url 'product' pk=BR.id %}">{{ BR.name }}</a></h2>
                                         <strong class="item-price">
                                             {% if BR.old_price %}
                                                 <del>{{ BR.old_price }}€</del>

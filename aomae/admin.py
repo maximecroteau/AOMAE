@@ -4,8 +4,8 @@ from .models import Products
 
 
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'old_price', 'price', 'picture', 'stars')
-    list_filter = ('name', 'old_price', 'price', 'stars')
+    list_display = ('name', 'old_price', 'price', 'picture', 'gender', 'description', 'stars')
+    list_filter = ('name', 'old_price', 'price', 'gender', 'description', 'stars')
 
 
 admin.site.register(Products, ProductsAdmin)

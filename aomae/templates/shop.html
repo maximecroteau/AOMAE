@@ -1,283 +1,85 @@
 {% extends 'base.html' %}
-{%  load static %}
+{% load static %}
 
-  {% block body %}
-    <div class="site-blocks-cover inner-page" data-aos="fade">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ml-auto order-md-2 align-self-start">
-            <div class="site-block-cover-content">
-            <h2 class="sub-title">#Nouvelle collection</h2>
-            <h1>LES NOUVEAUTÉS</h1>
-            <p><a href="{% url 'shop' %}" class="btn btn-black rounded-0">VOIR MAINTENANT</a></p>
-            </div>
-          </div>
-{#          <div class="col-md-6 order-1 align-self-end">#}
-{#            <img src="{% static '/model_4.png' %}" alt="Image" class="img-fluid">#}
-{#          </div>#}
-        </div>
-      </div>
-    </div>
-
+{% block body %}
     <div class="custom-border-bottom py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 mb-0"><a href="{% url 'index' %}">Page Principale</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Boutique</strong></div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="site-section">
-      <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-9 order-1">
-
-            <div class="row align">
-              <div class="col-md-12 mb-5">
-                <div class="float-md-left"><h2 class="text-black h5">Tous nos produits</h2></div>
-                <div class="d-flex">
-                  <div class="dropdown mr-1 ml-md-auto">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Genre
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                      <a class="dropdown-item" href="#">Homme</a>
-                      <a class="dropdown-item" href="#">Femme</a>
-                      <a class="dropdown-item" href="#">Enfant</a>
-                    </div>
-                  </div>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Tri</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                      <a class="dropdown-item" href="#">Pertinence</a>
-                      <a class="dropdown-item" href="#">Ordre Alphabetique</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Prix Croissant</a>
-                      <a class="dropdown-item" href="#">Prix Décroissant</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-5">
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_2.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Gray Shoe</a></h2>
-                <strong class="item-price">$20.00</strong>
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_3.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-              </div>
-
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-
-                <div class="star-rating">
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                </div>
-
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_1.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-                <div class="star-rating">
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                </div>
-              </div>
-
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_1.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_7.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
-                <strong class="item-price">$58.00</strong>
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_2.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Gray Shoe</a></h2>
-                <strong class="item-price">$20.00</strong>
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_3.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Blue Shoe High Heels</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-              </div>
-
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Denim Jacket</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-
-                <div class="star-rating">
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                </div>
-
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/prod_1.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Leather Green Bag</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-                <div class="star-rating">
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                  <span class="icon-star2 text-warning"></span>
-                </div>
-              </div>
-
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_1.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Smooth Cloth</a></h2>
-                <strong class="item-price"><del>$46.00</del> $28.00</strong>
-              </div>
-              <div class="col-lg-6 col-md-6 item-entry mb-4">
-                <a href="#" class="product-item md-height bg-gray d-block">
-                  <img src="{% static 'images/model_7.png' %}" alt="Image" class="img-fluid">
-                </a>
-                <h2 class="item-title"><a href="#">Yellow Jacket</a></h2>
-                <strong class="item-price">$58.00</strong>
-              </div>
-            </div>
+        <div class="container">
             <div class="row">
-              <div class="col-md-12 text-center">
-                <div class="site-block-27">
-                  <ul>
-                    <li><a href="#">&lt;</a></li>
-                    <li class="active"><span>1</span></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&gt;</a></li>
-                  </ul>
-                </div>
-              </div>
+                <div class="col-md-12 mb-0"><a href="{% url 'index' %}">Page Principale</a> <span
+                        class="mx-2 mb-0">/</span> <strong class="text-black">Boutique</strong></div>
             </div>
-          </div>
-
-          <div class="col-md-3 order-2 mb-5 mb-md-0">
-            <div class="border p-4 rounded mb-4">
-              <h3 class="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
-              <ul class="list-unstyled mb-0">
-                <li class="mb-1"><a href="#" class="d-flex"><span>Homme</span> <span class="text-black ml-auto">(21.21)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Femme</span> <span class="text-black ml-auto">(2.626)</span></a></li>
-                <li class="mb-1"><a href="#" class="d-flex"><span>Enfant</span> <span class="text-black ml-auto">(2.126)</span></a></li>
-              </ul>
-            </div>
-
-            <div class="border p-4 rounded mb-4">
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Trier par prix</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
-              </div>
-
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Taille</h3>
-                <label for="s_sm" class="d-flex">
-                  <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">S (2,319)</span>
-                </label>
-                <label for="s_md" class="d-flex">
-                  <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">M (1,282)</span>
-                </label>
-                <label for="s_lg" class="d-flex">
-                  <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">L (1,392)</span>
-                </label>
-              </div>
-
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Couleur</h3>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Rouge (2,429)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Vert (2,298)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Bleu (1,075)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Violet (1,075)</span>
-                </a>
-              </div>
-
-            </div>
-          </div>
         </div>
-
-      </div>
     </div>
+
 
     <div class="site-section">
-      <div class="container">
-        <div class="title-section mb-5">
-          <h2 class="text-uppercase"><span class="d-block">Découvrir</span> La collection</h2>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-lg-8">
-            <div class="product-item sm-height full-height bg-gray">
-              <a href="#" class="product-category">Femme <span>25 items</span></a>
-              <img src="{% static 'images/model_4.png' %}" alt="Image" class="img-fluid">
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="product-item sm-height bg-gray mb-4">
-              <a href="#" class="product-category">Homme <span>25 items</span></a>
-              <img src="{% static 'images/model_5.png' %}" alt="Image" class="img-fluid">
-            </div>
+        <div class="container">
 
-            <div class="product-item sm-height bg-gray">
-              <a href="#" class="product-category">Unisex <span>25 items</span></a>
-              <img src="{% static 'images/model_6.png' %}" alt="Image" class="img-fluid">
+            <div class="row mb-5">
+                <div class="col-md-9 order-1">
+
+                    <div class="row align">
+                        <div class="col-md-12 mb-5">
+                            <div class="float-md-left"><h2 class="text-black h5">Tous nos produits</h2></div>
+                            <div class="d-flex">
+                                <div class="dropdown mr-1 ml-md-auto">
+                                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4"
+                                            id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        Genre
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                        <a class="dropdown-item" href="{% url 'shop' filt="homme" %}">Homme</a>
+                                        <a class="dropdown-item" href="{% url 'shop' filt="femme" %}">Femme</a>
+                                        <a class="dropdown-item" href="{% url 'shop' filt="unisex" %}">Unisex</a>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-white btn-sm dropdown-toggle px-4"
+                                            id="dropdownMenuReference" data-toggle="dropdown">Tri
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                                        <a class="dropdown-item" href="{% url 'shop' filt="alpha" %}">Ordre Alphabetique</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'shop' filt="croissant" %}">Prix Croissant</a>
+                                        <a class="dropdown-item" href="{% url 'shop' filt="decroissant" %}">Prix Décroissant</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        {% for Prd in Prds %}
+
+                            <div class="col-lg-6 col-md-6 item-entry mb-4">
+                                <a href="{% url 'product' pk=Prd.id %}" class="product-item md-height bg-gray d-block">
+                                    <img src="{{ Prd.picture.url }}" alt="Image" class="img-fluid">
+                                </a>
+                                <h2 class="item-title"><a href="{% url 'product' pk=Prd.id %}">{{ Prd.name }}</a></h2>
+                                <strong class="item-price">
+                                    {% if Prd.old_price %}
+                                        <del>{{ Prd.old_price }}€</del>
+                                    {% endif %}
+                                    {{ Prd.price }}€</strong>
+
+                                {% if Prd.stars %}
+                                    <div id="prd_{{ Prd.id }}" class="star-rating">
+                                        <script>
+                                            for (let i = 0; i < {{ Prd.stars }}; i++) {
+                                                let spanElt = document.createElement("span");
+                                                spanElt.classList.add("icon-star2");
+                                                spanElt.classList.add("text-warning");
+                                                let divElt = document.getElementById("prd_" + {{ Prd.id }});
+                                                divElt.appendChild(spanElt)
+                                            }
+                                        </script>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-
 {% endblock %}
