@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 from .models import Products
-# Create your views here.
+from .models import Color
+
+from .forms import AddToCartForm
 
 
 def get_data():
@@ -50,9 +53,27 @@ def shop_filter(request, filt):
 
 
 def product(request, pk):
+    form = AddToCartForm(request.POST)
+    if form.is_valid():
+        data = form.cleaned_data
+        fpk = data['product_id']
+        color = data['product_color']
+        size = data['product_size']
+        if 'cart' not in request.session or not request.session['cart']:
+            cart_list = [fpk, color, size]
+            request.session['cart'] = cart_list
+            request.session.modified = True
+        else:
+            cart_list = request.session['cart']
+            cart_list.append([fpk, color, size])
+            request.session['cart'] = cart_list
+            request.session.modified = True
+        return redirect('cart')
     this = Products.objects.get(pk=pk)
+    colors = Color.objects.filter(products__pk=pk)
     return render(request, 'product.html', {
         'product': this,
+        'colors': colors,
     })
 
 
@@ -62,8 +83,26 @@ def contact(request):
 
 
 def cart(request):
-
-    return render(request, 'cart.html')
+    all_cart = []
+    if request.session.get('cart'):
+        cs = request.session.get('cart')
+        dic = {
+            "product": Products.objects.get(pk=cs[0]),
+            "color": cs[1],
+            "size": cs[2]
+        }
+        all_cart.append(dic)
+        if len(cs) > 3:
+            for i in range(3, len(cs)):
+                dic = {
+                    "product": Products.objects.get(pk=cs[i][0]),
+                    "color": cs[i][1],
+                    "size": cs[i][2]
+                }
+                all_cart.append(dic)
+    return render(request, 'cart.html', {
+        'carts': all_cart,
+    })
 
 
 def checkout(request):

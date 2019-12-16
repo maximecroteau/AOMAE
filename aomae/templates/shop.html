@@ -57,9 +57,6 @@
                                 </a>
                                 <h2 class="item-title"><a href="{% url 'product' pk=Prd.id %}">{{ Prd.name }}</a></h2>
                                 <strong class="item-price">
-                                    {% if Prd.old_price %}
-                                        <del>{{ Prd.old_price }}€</del>
-                                    {% endif %}
                                     {{ Prd.price }}€</strong>
 
                                 {% if Prd.stars %}
