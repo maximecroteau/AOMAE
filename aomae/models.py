@@ -24,7 +24,7 @@ class Products(models.Model):
     ]
     name = models.CharField(max_length=100)
     price = models.IntegerField()
-    picture = models.ImageField(blank=True, upload_to="static/images/bdd/")
+    picture = models.ImageField(blank=True, upload_to="static/images/")
     color = models.ManyToManyField('Color')
     gender = models.CharField(choices=gender_choice, max_length=7, default="Unisex")
     description = models.CharField(blank=True, max_length=600, default="Pas de description actuellement")
