@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
+from django.forms import model_to_dict
 
 from .models import Products
 from .models import Color
 
 from .forms import AddToCartForm
+from .forms import RemFromCartForm
+from .forms import ContactForm
 
 
 def get_data():
@@ -59,15 +62,19 @@ def product(request, pk):
         fpk = data['product_id']
         color = data['product_color']
         size = data['product_size']
+        url = Products.objects.get(pk=fpk).picture.url
         if 'cart' not in request.session or not request.session['cart']:
-            cart_list = [fpk, color, size]
+            pk = 0
+            cart_list = [(pk, model_to_dict(Products.objects.get(pk=fpk), fields=['name', 'price']), url, color, size)]
             request.session['cart'] = cart_list
             request.session.modified = True
         else:
             cart_list = request.session['cart']
-            cart_list.append([fpk, color, size])
+            pk = cart_list[-1][0] + 1
+            cart_list.append((pk, model_to_dict(Products.objects.get(pk=fpk), fields=['name', 'price']), url, color, size))
             request.session['cart'] = cart_list
             request.session.modified = True
+
         return redirect('cart')
     this = Products.objects.get(pk=pk)
     colors = Color.objects.filter(products__pk=pk)
@@ -78,41 +85,52 @@ def product(request, pk):
 
 
 def contact(request):
+    form = ContactForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
 
     return render(request, 'contact.html')
 
 
 def cart(request):
-    all_cart = []
     if request.session.get('cart'):
         cs = request.session.get('cart')
-        dic = {
-            "product": Products.objects.get(pk=cs[0]),
-            "color": cs[1],
-            "size": cs[2]
-        }
-        all_cart.append(dic)
-        if len(cs) > 3:
-            for i in range(3, len(cs)):
-                dic = {
-                    "product": Products.objects.get(pk=cs[i][0]),
-                    "color": cs[i][1],
-                    "size": cs[i][2]
-                }
-                all_cart.append(dic)
+    else:
+        cs = []
+    form = RemFromCartForm(request.POST)
+    if form.is_valid():
+        data = form.cleaned_data
+        val = data['toRem'].split(";")
+        lst = {'name': val[1], 'price': int(val[2])}
+        dic = [int(val[0]), lst, val[3], val[4], val[5]]
+        cs.remove(dic)
+        request.session.modified = True
+
+        return redirect('cart')
 
     return render(request, 'cart.html', {
-        'carts': all_cart,
+        'carts': cs,
     })
 
 
 def checkout(request):
+    if request.session.get('cart'):
+        cs = request.session.get('cart')
+    else:
+        cs = []
 
-    return render(request, 'checkout.html')
+    return render(request, 'checkout.html', {
+        'carts': cs,
+    })
+
+
+def about(request):
+
+    return render(request, 'about.html')
 
 
 def thankyou(request):
 
     return render(request, 'thankyou.html')
-
 

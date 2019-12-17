@@ -10,4 +10,5 @@ urlpatterns = [
     path('thankyou', views.thankyou, name='thankyou'),
     path('shop_<slug:filt>', views.shop_filter, name='shop'),
     path('product_<int:pk>', views.product, name='product'),
+    path('about', views.about, name='about')
 ]

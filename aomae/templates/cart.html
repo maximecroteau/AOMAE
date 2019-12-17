@@ -29,21 +29,30 @@
                             </thead>
                             <tbody>
                             {% for cart in carts %}
+
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="{{ cart.product.picture.url }}" alt="Image" class="img-fluid">
+                                        <img src="{{ cart.2 }}" alt="Image" class="img-fluid">
                                     </td>
                                     <td class="product-name">
-                                        <h2 class="h5 text-black">{{ cart.product.name }}</h2>
+                                        <h2 class="h5 text-black">{{ cart.1.name }}</h2>
                                     </td>
-                                    <td class="item-price">{{ cart.product.price }} €</td>
+                                    <td class="item-price">{{ cart.1.price }} €</td>
                                     <td>
-                                        <h2 class="h5 text-black">{{ cart.color }}</h2>
+                                        <h2 class="h5 text-black">{{ cart.3 }}</h2>
                                     </td>
                                     <td>
-                                        <h2 class="h5 text-black">{{ cart.size }}</h2>
+                                        <h2 class="h5 text-black">{{ cart.4 }}</h2>
                                     </td>
-                                    <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                                    <td>
+                                        <form method="POST" class="post-form">
+                                            {% csrf_token %}
+                                            <input id="values" name="toRem" type="hidden" value="{{ cart.0 }};{{ cart.1.name }};{{ cart.1.price }};{{ cart.2 }};{{ cart.3 }};{{ cart.4 }}">
+                                            <button type="submit"
+                                                    class="btn btn-primary height-auto btn-sm">X
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -55,10 +64,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row mb-5">
+{#                        <div class="col-md-6 mb-3 mb-md-0">#}
+{#                            <button class="btn btn-primary btn-sm btn-block">Mettre a jour le panier</button>#}
+{#                        </div>#}
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <button class="btn btn-primary btn-sm btn-block">Mettre a jour le panier</button>
-                        </div>
-                        <div class="col-md-6">
                             <a href="{% url 'shop' %}">
                                 <button class="btn btn-outline-primary btn-sm btn-block">Continuer vos achats</button>
                             </a>

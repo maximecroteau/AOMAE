@@ -51,3 +51,15 @@ class Color(models.Model):
 
     def __str__(self):
         return self.color
+
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    mail = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField(max_length=1200)
+
+    class Meta:
+        verbose_name = "Contact"
+        ordering = ['name']

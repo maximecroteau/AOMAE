@@ -52,7 +52,7 @@
                 </li>
 
                 <li><a href="{% url 'shop' %}">Catalogue</a></li>
-                <li><a href="#">Nouveautés</a></li>
+                <li><a href="{% url 'about' %}">Nous découvrir</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
               </ul>
             </nav>
@@ -61,7 +61,7 @@
 {#            <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>#}
             <a href="{% url 'cart'%}" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
-              <span class="number">12</span>
+{#              <span class="number">12</span>#}
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
@@ -90,7 +90,7 @@
               <div class="col-md-6 col-lg-4">
                 <ul class="list-unstyled">
                   <li><a href="#">Point de vente</a></li>
-                  <li><a href="#">Notre concept</a></li>
+                  <li><a href="{% url 'about' %}">Notre concept</a></li>
                 </ul>
               </div>
             </div>
