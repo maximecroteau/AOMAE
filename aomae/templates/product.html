@@ -27,39 +27,86 @@
                         <h2 class="text-black">{{ product.name }}</h2>
                         <p>{{ product.description }}</p>
                         <p><strong class="text-primary h4">{{ product.price }} €</strong></p>
-                        <div class="mb-1 d-flex">
-                            <label for="option-sm" class="d-flex mr-3 mb-3">
+                        {% ifequal product.size_type "SML" %}
+                            <div class="mb-1 d-flex">
+                                <label for="option-sm" class="d-flex mr-3 mb-3">
                             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
                                                                                                            id="option-sm"
-                                                                                                           name="product_size" value="s"></span>
-                                <span class="d-inline-block text-black">Small</span>
-                            </label>
-                            <label for="option-md" class="d-flex mr-3 mb-3">
+                                                                                                           name="product_size"
+                                                                                                           value="s"></span>
+                                    <span class="d-inline-block text-black">Small</span>
+                                </label>
+                                <label for="option-md" class="d-flex mr-3 mb-3">
                             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
                                                                                                            id="option-md"
-                                                                                                           name="product_size" value="m"></span>
-                                <span class="d-inline-block text-black">Medium</span>
-                            </label>
-                            <label for="option-lg" class="d-flex mr-3 mb-3">
+                                                                                                           name="product_size"
+                                                                                                           value="m"></span>
+                                    <span class="d-inline-block text-black">Medium</span>
+                                </label>
+                                <label for="option-lg" class="d-flex mr-3 mb-3">
                             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
                                                                                                            id="option-lg"
-                                                                                                           name="product_size" value="l"></span>
-                                <span class="d-inline-block text-black">Large</span>
-                            </label>
-                            <label for="option-xl" class="d-flex mr-3 mb-3">
+                                                                                                           name="product_size"
+                                                                                                           value="l"></span>
+                                    <span class="d-inline-block text-black">Large</span>
+                                </label>
+                                <label for="option-xl" class="d-flex mr-3 mb-3">
                             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
                                                                                                            id="option-xl"
-                                                                                                           name="product_size" value="xl"></span>
-                                <span class="d-inline-block text-black"> Extra Large</span>
-                            </label>
-                        </div>
+                                                                                                           name="product_size"
+                                                                                                           value="xl"></span>
+                                    <span class="d-inline-block text-black"> Extra Large</span>
+                                </label>
+                            </div>
+                        {% endifequal %}
 
+                        {% ifequal product.size_type "Words" %}
+                            <div class="mb-1 d-flex">
+                                <label for="option-sm" class="d-flex mr-3 mb-3">
+                                    <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input
+                                            type="radio" id="option-sm" name="product_size" value="Petit"></span>
+                                    <span class="d-inline-block text-black">Petit</span>
+                                </label>
+                                <label for="option-md" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                                                                                           id="option-md"
+                                                                                                           name="product_size"
+                                                                                                           value="Moyen"></span>
+                                    <span class="d-inline-block text-black">Moyen</span>
+                                </label>
+                                <label for="option-lg" class="d-flex mr-3 mb-3">
+                            <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio"
+                                                                                                           id="option-lg"
+                                                                                                           name="product_size"
+                                                                                                           value="Grand"></span>
+                                    <span class="d-inline-block text-black">Grand</span>
+                                </label>
+                            </div>
+                        {% endifequal %}
+
+                        {% ifequal product.size_type "Numbers" %}
+                            <div class="input-group-prepend">
+                                <div class="form-group">
+                                    <label for="nb_size" class="text-black mr-3">Taille <span
+                                            class="text-danger">*</span></label>
+                                    <select name="product_size" id="nb_size" class="form-control">
+                                        <script>
+                                            for(let i = 34; i < 46; i++){
+                                                let sizeElt = document.createElement("option");
+                                                sizeElt.value = String(i);
+                                                sizeElt.textContent = String(i);
+                                                document.getElementById("nb_size").appendChild(sizeElt);
+                                            }
+                                        </script>
+                                    </select>
+                                </div>
+                            </div>
+                        {% endifequal %}
 
                         <div class="mb-5">
                             <div class="input-group mb-3" style="max-width: 120px;">
                                 <div class="input-group-prepend">
                                     <div class="form-group">
-
                                         <label for="product_color" class="text-black">Couleur <span
                                                 class="text-danger">*</span></label>
                                         <select name="product_color" id="product_color" class="form-control">
@@ -68,8 +115,16 @@
                                             {% endfor %}
                                         </select>
                                         <input id="product_id" name="product_id" type="hidden" value="{{ product.id }}">
-                                        <input type="submit" class="btn btn-primary btn-lg btn-block"
-                                               value="Ajouter au panier">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <div class="input-group mb-3" style="max-width: 120px;">
+                                    <div class="input-group-prepend">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-primary btn-lg btn-block form-control"
+                                                   value="Ajouter au panier"></div>
                                     </div>
                                 </div>
                             </div>

@@ -5,7 +5,7 @@ from .models import Color
 
 
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'picture', 'get_colors', 'gender', 'description', 'stars')
+    list_display = ('name', 'price', 'picture', 'get_colors', 'gender', 'description', 'size_type', 'stars')
     list_filter = ('name', 'price', 'color', 'gender', 'description', 'stars')
 
 
@@ -16,4 +16,5 @@ class ColorAdmin(admin.ModelAdmin):
 
 admin.site.register(Products, ProductsAdmin)
 admin.site.register(Color, ColorAdmin)
+
 # python manage.py migrate --run-syncdb

@@ -100,6 +100,7 @@ def cart(request):
                     "size": cs[i][2]
                 }
                 all_cart.append(dic)
+
     return render(request, 'cart.html', {
         'carts': all_cart,
     })
