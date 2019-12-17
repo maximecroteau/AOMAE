@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>AOMAE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,104 +21,107 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-  </head>
-    <div class="site-wrap">
+</head>
+<div class="site-wrap">
 
-      <div class="site-navbar bg-white py-2">
+    <div class="site-navbar bg-white py-2">
 
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="logo">
-                <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Image" class="logo-main"></a>
-          </div>
-          <div class="main-nav d-none d-lg-block">
-            <nav class="site-navigation text-right text-md-center" role="navigation">
-              <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li class="has-children active">
-                  <a href="{% url 'index' %}">Home</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="logo">
+                    <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Image" class="logo-main"></a>
+                </div>
+                <div class="main-nav d-none d-lg-block">
+                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                            <li class="has-children active">
+                                <a href="{% url 'index' %}">Home</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Menu One</a></li>
+                                    <li><a href="#">Menu Two</a></li>
+                                    <li><a href="#">Menu Three</a></li>
+                                    <li class="has-children">
+                                        <a href="#">Sub Menu</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Menu One</a></li>
+                                            <li><a href="#">Menu Two</a></li>
+                                            <li><a href="#">Menu Three</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
 
-                <li><a href="{% url 'shop' %}">Catalogue</a></li>
-                <li><a href="{% url 'about' %}">Nous découvrir</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="icons">
-{#            <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>#}
-            <a href="{% url 'cart'%}" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-{#              <span class="number">12</span>#}
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-          </div>
+                            <li><a href="{% url 'shop' %}">Catalogue</a></li>
+                            <li><a href="{% url 'about' %}">Nous découvrir</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="icons">
+                    {#            <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>#}
+                    <a href="{% url 'cart' %}" class="icons-btn d-inline-block bag">
+                        <span class="icon-shopping-bag"></span>
+                        {% if nb %}
+                            <span class="number">{{ nb }}</span>
+                        {% endif %}
+                    </a>
+                    <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                            class="icon-menu"></span></a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-  {% block body %}
-  {% endblock %}
-     <footer class="site-footer custom-border-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 ml-auto mb-0 mb-lg-0">
+    {% block body %}
+    {% endblock %}
+    <footer class="site-footer custom-border-top">
+        <div class="container">
             <div class="row">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Nos liens</h3>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <ul class="list-unstyled">
-                  <li><a href="http://facebook.com">Facebook</a></li>
-                  <li><a href="http://instagram.com">Instagram</a></li>
-                  <li><a href="http://twitter.com">Twitter</a></li>
-                  <li><a href="{% url 'shop' %}">Boutique</a></li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">Point de vente</a></li>
-                  <li><a href="{% url 'about' %}">Notre concept</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+                <div class="col-lg-5 ml-auto mb-0 mb-lg-0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="footer-heading mb-4">Nos liens</h3>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="http://facebook.com">Facebook</a></li>
+                                <li><a href="http://instagram.com">Instagram</a></li>
+                                <li><a href="http://twitter.com">Twitter</a></li>
+                                <li><a href="{% url 'shop' %}">Boutique</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Point de vente</a></li>
+                                <li><a href="{% url 'about' %}">Notre concept</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-          <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-2">
-              <h3 class="footer-heading mb-4">Nous contacter</h3>
-              <ul class="list-unstyled">
-                <li class="address">ISEFAC, 28 Rue Armand Brossard, 44000 Nantes</li>
-                <li class="phone"><a href="tel://23923929210">+33 (2) 40 33 30 83</a></li>
-                <li class="email">aomae@contact.fr</li>
-              </ul>
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-5 mb-2">
+                        <h3 class="footer-heading mb-4">Nous contacter</h3>
+                        <ul class="list-unstyled">
+                            <li class="address">ISEFAC, 28 Rue Armand Brossard, 44000 Nantes</li>
+                            <li class="phone"><a href="tel://23923929210">+33 (2) 40 33 30 83</a></li>
+                            <li class="email">aomae@contact.fr</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
-  </div>
-  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-  <script src="{% static 'js/jquery-ui.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'js/aos.js' %}"></script>
+</div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
 
-  <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
-  </body>
+</body>
 </html>

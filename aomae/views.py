@@ -18,27 +18,43 @@ def get_data():
     return homme, femme, unisex, all_products, best_rates
 
 
-def index(request):
-    homme, femme, unisex, all_products, best_rates = get_data()
+def get_nbcart(request):
+    nbr = request.session.get('cart')
+    i = 0
+    if nbr:
+        for nb in nbr:
+            i = i + 1
+            nbr = i
+        return nbr
+    else:
+        return ""
 
+
+def index(request):
+    nb = get_nbcart(request)
+    homme, femme, unisex, all_products, best_rates = get_data()
     return render(request, 'index.html', {
         'Prds': all_products,
         'BestRates': best_rates,
         'nbHomme': homme,
         'nbFemme': femme,
         'nbUnisex': unisex,
+        'nb': nb,
     })
 
 
 def shop(request):
+    nb = get_nbcart(request)
     homme, femme, unisex, all_products, best_rates = get_data()
 
     return render(request, 'shop.html', {
         'Prds': all_products,
+        'nb': nb,
     })
 
 
 def shop_filter(request, filt):
+    nb = get_nbcart(request)
     if filt == "homme" or filt == "femme" or filt == "unisex":
         prds = Products.objects.filter(gender__contains=filt)
     elif filt == "alpha":
@@ -52,10 +68,12 @@ def shop_filter(request, filt):
 
     return render(request, 'shop.html', {
         'Prds': prds,
+        'nb': nb,
     })
 
 
 def product(request, pk):
+    nb = get_nbcart(request)
     form = AddToCartForm(request.POST)
     if form.is_valid():
         data = form.cleaned_data
@@ -81,19 +99,24 @@ def product(request, pk):
     return render(request, 'product.html', {
         'product': this,
         'colors': colors,
+        'nb': nb,
     })
 
 
 def contact(request):
+    nb = get_nbcart(request)
     form = ContactForm(request.POST)
     if form.is_valid():
         form.save()
         return redirect('index')
 
-    return render(request, 'contact.html')
+    return render(request, 'contact.html', {
+        'nb': nb,
+    })
 
 
 def cart(request):
+    nb = get_nbcart(request)
     if request.session.get('cart'):
         cs = request.session.get('cart')
     else:
@@ -111,10 +134,12 @@ def cart(request):
 
     return render(request, 'cart.html', {
         'carts': cs,
+        'nb': nb,
     })
 
 
 def checkout(request):
+    nb = get_nbcart(request)
     if request.session.get('cart'):
         cs = request.session.get('cart')
     else:
@@ -122,15 +147,23 @@ def checkout(request):
 
     return render(request, 'checkout.html', {
         'carts': cs,
+        'nb': nb,
     })
 
 
 def about(request):
+    nb = get_nbcart(request)
 
-    return render(request, 'about.html')
+    return render(request, 'about.html', {
+        'nb': nb,
+    })
 
 
 def thankyou(request):
+    nb = get_nbcart(request)
 
-    return render(request, 'thankyou.html')
+    return render(request, 'thankyou.html', {
+        'nb': nb,
+    })
+
 
