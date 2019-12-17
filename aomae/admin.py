@@ -24,3 +24,4 @@ admin.site.register(Products, ProductsAdmin)
 admin.site.register(Color, ColorAdmin)
 admin.site.register(Contact, ContactAdmin)
 # python manage.py migrate --run-syncdb
+
